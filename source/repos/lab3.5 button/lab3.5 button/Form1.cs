@@ -1,0 +1,49 @@
+﻿
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace lab3._5_button
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+
+            // Цонхны тохиргоо
+            this.Text = "Хаах товчтой цонх";
+            this.Width = 400;
+            this.Height = 300;
+
+            // "Close" гэсэн бичвэртэй товч үүсгэх
+            Button button = new Button();
+            button.Text = "Гарах";
+            button.Width = 100;
+            button.Height = 40;
+            button.Location = new Point(140, 110);
+
+            // Товч дарахад Yes/No асуух үйлдэл
+            button.Click += (sender, e) =>
+            {
+                DialogResult result = MessageBox.Show(
+                    "Цонхыг хаах уу?",
+                    "Баталгаажуулах",
+                    MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    this.Close(); // form-ийн оронд энэ формоо шууд хаахын тулд this.Close() ашиглана
+                }
+            };
+
+            // Товчийг цонхонд нэмэх
+            this.Controls.Add(button);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Хоосон байж болно
+        }
+    }
+}
