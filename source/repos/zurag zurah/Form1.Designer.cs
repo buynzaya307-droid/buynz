@@ -28,58 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnLine = new Button();
-            btnRect = new Button();
             btnColor = new Button();
             cmbWidth = new ComboBox();
             colorDialog1 = new ColorDialog();
+            cmbShape = new ComboBox();
+            btnClear = new Button();
             SuspendLayout();
-            // 
-            // btnLine
-            // 
-            btnLine.Location = new Point(0, 0);
-            btnLine.Name = "btnLine";
-            btnLine.Size = new Size(94, 29);
-            btnLine.TabIndex = 0;
-            btnLine.Text = "Шугам";
-            btnLine.UseVisualStyleBackColor = true;
-            // 
-            // btnRect
-            // 
-            btnRect.Location = new Point(111, 0);
-            btnRect.Name = "btnRect";
-            btnRect.Size = new Size(110, 29);
-            btnRect.TabIndex = 1;
-            btnRect.Text = "Дөрвөлжин";
-            btnRect.UseVisualStyleBackColor = true;
             // 
             // btnColor
             // 
-            btnColor.Location = new Point(254, 0);
+            btnColor.BackColor = Color.FromArgb(255, 192, 192);
+            btnColor.Location = new Point(186, 12);
             btnColor.Name = "btnColor";
-            btnColor.Size = new Size(150, 29);
+            btnColor.Size = new Size(151, 28);
             btnColor.TabIndex = 2;
             btnColor.Text = "Өнгө солих";
-            btnColor.UseVisualStyleBackColor = true;
+            btnColor.UseVisualStyleBackColor = false;
             // 
             // cmbWidth
             // 
+            cmbWidth.BackColor = Color.FromArgb(255, 192, 192);
             cmbWidth.FormattingEnabled = true;
             cmbWidth.Items.AddRange(new object[] { "2", "5", "10", "15" });
-            cmbWidth.Location = new Point(439, 12);
+            cmbWidth.Location = new Point(362, 12);
             cmbWidth.Name = "cmbWidth";
-            cmbWidth.Size = new Size(151, 28);
+            cmbWidth.Size = new Size(98, 28);
             cmbWidth.TabIndex = 3;
+            cmbWidth.Text = "Хэмжээ";
+            // 
+            // cmbShape
+            // 
+            cmbShape.BackColor = Color.FromArgb(255, 192, 192);
+            cmbShape.FormattingEnabled = true;
+            cmbShape.Items.AddRange(new object[] { "Шугам", "Дөрвөлжин", "Дугуй", "Гурвалжин" });
+            cmbShape.Location = new Point(12, 12);
+            cmbShape.Name = "cmbShape";
+            cmbShape.Size = new Size(152, 28);
+            cmbShape.TabIndex = 4;
+            cmbShape.Text = "Дүрс";
+            // 
+            // btnClear
+            // 
+            btnClear.BackColor = Color.FromArgb(255, 192, 192);
+            btnClear.Location = new Point(493, 15);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(94, 29);
+            btnClear.TabIndex = 5;
+            btnClear.Text = "Баллуур";
+            btnClear.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonFace;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnClear);
+            Controls.Add(cmbShape);
             Controls.Add(cmbWidth);
             Controls.Add(btnColor);
-            Controls.Add(btnRect);
-            Controls.Add(btnLine);
+            ForeColor = SystemColors.ActiveCaptionText;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -87,11 +95,10 @@
         }
 
         #endregion
-
-        private Button btnLine;
-        private Button btnRect;
         private Button btnColor;
         private ComboBox cmbWidth;
         private ColorDialog colorDialog1;
+        private ComboBox cmbShape;
+        private Button btnClear;
     }
 }
